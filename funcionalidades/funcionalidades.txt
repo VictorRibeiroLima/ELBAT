@@ -1,0 +1,20 @@
+Funcionalidade 1: UsuarioBO-gravarNovoUsuario()
+-Funcionalidade responsavel por Registrar um novo usuario ao sistema,aplicando as regras de negócio.
+-A fundionalidade usa um metodo do UsuarioDAO que recupera o maiorID dos usuarios registrados.
+-Com esse numero unico ele adiciona +1 assim garantindo que o id sera único.
+-Então ela checa se esse id não passa do numero 99999 que é o numero maximo permitido no banco até então.
+-A funcionalidade passa a olhar se a pergunta que o usuario esta tentando registrar é valida e esta no banco de Perguntas.
+-Logo em seguida ela valida regras de email e válida se esse email já esta registrado no banco.
+-É checado se o gênero  que será registrado é um gênero válido.
+-É checado se o nome tem o tamanho aceito pelo banco,assim como o apelido,senha e resposta.
+-É checado se o apelido já esta registrado no banco.
+-E por ultimo é checado se o atributo adm será registrado com uma das opções validas.
+-Logo então todos os dados são padronizados.
+-O usuario é registrado
+-O metodo da ConfigUsuarioBO - configsDefault() é chamado para registrar esse usuario já com uma configuração padrão.
+-A conexão é fechada e a resposta do registro é retornada.
+
+
+Funcionalidade 2: ConfigUsuarioBO-consultarConfigsPorLingua()
+-Funcionalidade responsavel por recuperar do banco uma lista com todas as Configs registradas com uma lingua especifica.
+-Consultando a tabela T_AM_CONFIG_USUARIO,T_AM_PERGUNTA,T_AM_DIFICULDADE,T_AM_LINGUA e T_AM_USUARIO,pela chave primaria do T_AM_LINGUA.
